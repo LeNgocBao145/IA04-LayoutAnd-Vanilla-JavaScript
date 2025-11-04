@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <div class="flex justify-center items-center mb-2 mt-5">
+        <h1 class="text-2xl font-bold">23127155</h1>
+    </div>
+    <header class="flex justify-center items-center">
+        <div class="text-white bg-blue-200 border-solid rounded-full p-2">
+            <a class="p-4" href="">Home</a>
+            <a class="p-4" href="">About</a>
+            <a class="p-4" href="">Services</a>
+            <a class="p-4" href="">Contact</a>
+        </div>
+    </header>
+    <main class="my-2">
+        <div class="flex columns-2 gap-4">
+            <div class="w-1/5">
+                <h1 class="p-4 inline-block font-bold w-full inline-block bg-[linear-gradient(80deg,#b45309,#ffffff)]">Registration Form</h1>
+                <form id="userForm" class="flex flex-col px-4 gap-2">
+                    <label for="firstName">First Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="firstName" name="firstName" class="border rounded px-2 py-1" required>
+                    <span id="firstNameError" class="text-red-500 text-sm hidden"></span>
+
+                    <label for="lastName">Last Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="lastName" name="lastName" class="border rounded px-2 py-1" required>
+                    <span id="lastNameError" class="text-red-500 text-sm hidden"></span>
+
+                    <label for="email">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" class="border rounded px-2 py-1" required>
+                    <span id="emailError" class="text-red-500 text-sm hidden"></span>
+
+                    <div class="flex gap-2 mt-4">
+                        <button type="button" id="registerBtn" 
+                                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 flex-1">
+                            Register
+                        </button>
+                        <button type="button" id="updateBtn" 
+                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex-1">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="w-4/5">
+                <h1 class="p-4 inline-block font-bold w-full inline-block bg-[linear-gradient(80deg,#b45309,#ffffff)]">Current List</h1>
+                <div class="p-4">
+                    <table class="w-full border-collapse">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="py-2 px-4 text-left border-b">#</th>
+                                <th class="py-2 px-4 text-left border-b">Full Name</th>
+                                <th class="py-2 px-4 text-left border-b">Email</th>
+                                <th class="py-2 px-4 text-center border-b">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- User rows will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
