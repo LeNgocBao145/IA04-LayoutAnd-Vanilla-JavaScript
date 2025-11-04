@@ -11,14 +11,23 @@
     <div class="flex justify-center items-center mb-2 bg-[linear-gradient(180deg,#FFFF00,#ffffff)] pt-5">
         <h1 class="text-2xl font-bold">23127155</h1>
     </div>
-    <header class="flex justify-center items-center">
+    <!-- <header class="flex justify-center items-center">
         <div class="text-white bg-blue-200 border-solid rounded-full p-2">
             <a class="p-4" href="">Home</a>
             <a class="p-4" href="#">About</a>
             <a class="p-4" href="">Services</a>
             <a class="p-4" href="">Contact</a>
         </div>
-    </header>
+    </header> -->
+    <!-- HEADER -->
+  <header class="flex justify-center items-center mt-4">
+    <div class="text-white bg-blue-200 border-solid rounded-full p-2">
+      <a class="p-4 cursor-pointer" data-link="home">Home</a>
+      <a class="p-4 cursor-pointer" data-link="about">About</a>
+      <a class="p-4 cursor-pointer" data-link="services">Services</a>
+      <a class="p-4 cursor-pointer" data-link="contact">Contact</a>
+    </div>
+  </header>
     <main class="my-2">
         <div class="flex columns-2 gap-4">
             <div class="w-1/5">
@@ -68,13 +77,21 @@
             </div>
         </div>
     </main>
-    <footer class="flex justify-center items-center py-5 w-full text-black bg-[#e5e7eb] mt-5">
+    <!-- <footer class="flex justify-center items-center py-5 w-full text-black bg-[#e5e7eb] mt-5">
         <div class="">
             <span class="p-4" href="">Home</span>
             <span class="p-4" href="#">About</span>
             <span class="p-4" href="">Services</span>
             <span class="p-4" href="">Contact</span>
         </div>
-    </footer>
+    </footer> -->
+    <footer class="flex justify-center items-center py-5 w-full text-black bg-[#e5e7eb] mt-5">
+    <div>
+      <span class="p-4 cursor-pointer" data-link="home">Home</span>
+      <span class="p-4 cursor-pointer" data-link="about">About</span>
+      <span class="p-4 cursor-pointer" data-link="services">Services</span>
+      <span class="p-4 cursor-pointer" data-link="contact">Contact</span>
+    </div>
+  </footer>
 </body>
 </html>

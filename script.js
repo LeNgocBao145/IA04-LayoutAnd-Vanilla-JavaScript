@@ -144,7 +144,39 @@ function updateUser() {
 // Initialize the table and attach event listeners when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     renderUserList();
-    
+    const headerLinks = document.querySelectorAll("header [data-link]");
+    const footerLinks = document.querySelectorAll("footer [data-link]");
+
+    function clearActive() {
+      headerLinks.forEach(link => link.classList.remove("text-red-500", "underline"));
+      footerLinks.forEach(link => link.classList.remove("text-orange-500"));
+    }
+
+    function setActive(section) {
+      clearActive();
+
+      // Header: đỏ + gạch dưới
+      document.querySelector(`header [data-link="${section}"]`).classList.add("text-red-500");
+
+      // Footer: cam
+      document.querySelector(`footer [data-link="${section}"]`).classList.add("text-orange-500", "underline");
+    }
+
+    // Khi bấm vào header hoặc footer đều sync
+    headerLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        setActive(link.dataset.link);
+      });
+    });
+
+    footerLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        setActive(link.dataset.link);
+      });
+    });
+
+    // Mặc định chọn Home
+    setActive("home");
     document.getElementById('updateBtn').addEventListener('click', updateUser);
     document.getElementById('registerBtn').addEventListener('click', registerUser);
 });
