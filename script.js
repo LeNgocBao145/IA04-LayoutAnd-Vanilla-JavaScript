@@ -43,6 +43,10 @@ function validateForm() {
         document.getElementById('emailError').textContent = 'Please enter a valid email address';
         document.getElementById('emailError').classList.remove('hidden');
         isValid = false;
+    }else if (editingUserId === null && users.some(user => user.email === email)) {
+        document.getElementById('emailError').textContent = 'Email already exists';
+        document.getElementById('emailError').classList.remove('hidden');
+        isValid = false;
     }
 
     return isValid;
@@ -79,8 +83,6 @@ function renderUserList() {
 function clearForm() {
     document.getElementById('userForm').reset();
     editingUserId = null;
-    document.getElementById('registerBtn').classList.remove('hidden');
-    document.getElementById('updateBtn').classList.add('hidden');
     // Clear error messages
     document.querySelectorAll('.text-red-500:not(span)').forEach(span => span.classList.add('hidden'));
 }
@@ -92,8 +94,6 @@ window.editUser = function(id) {
         document.getElementById('firstName').value = user.firstName;
         document.getElementById('lastName').value = user.lastName;
         document.getElementById('email').value = user.email;
-        document.getElementById('registerBtn').classList.add('hidden');
-        document.getElementById('updateBtn').classList.remove('hidden');
     }
 }
 
@@ -145,6 +145,6 @@ function updateUser() {
 document.addEventListener('DOMContentLoaded', () => {
     renderUserList();
     
-    document.getElementById('registerBtn').addEventListener('click', registerUser);
     document.getElementById('updateBtn').addEventListener('click', updateUser);
+    document.getElementById('registerBtn').addEventListener('click', registerUser);
 });
